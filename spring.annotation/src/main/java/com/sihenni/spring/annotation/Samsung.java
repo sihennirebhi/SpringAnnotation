@@ -1,12 +1,15 @@
 package com.sihenni.spring.annotation;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
 public class Samsung {
 
 	@Autowired
+	@Qualifier("arm64") // instead of using @Primary 
+						//qualifier in Arm64 or IntelCpu classes. 
 	private MobileCPU cpu;
 	
 		public MobileCPU getCpu() {
